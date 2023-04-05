@@ -13,7 +13,7 @@ service = Service(executable_path=chrome_driver_path)
 driver = WebDriver(service=service, options=options)
 driver.maximize_window()
 
-# opening the website with 10s delay
+# opening the website with 10s delay (while the page loads)
 driver.get("https://orteil.dashnet.org/cookieclicker/")
 time.sleep(10)
 
@@ -21,7 +21,7 @@ time.sleep(10)
 accept_cookies = driver.find_element(By.LINK_TEXT, 'Got it!')
 accept_cookies.click()
 
-# choosing English as the language with 10s delay
+# choosing English as the language with 10s delay (while the page loads)
 lang_select = driver.find_element(By.CSS_SELECTOR, '#langSelect-EN')
 lang_select.click()
 time.sleep(10)
